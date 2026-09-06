@@ -1,0 +1,13 @@
+/// <reference types="vitest/config" />
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  base: process.env.VITE_BASE || './',
+  test: {
+    environment: 'node',
+    include: ['scripts/**/*.test.ts', 'src/**/*.test.{ts,tsx}'],
+    setupFiles: ['./src/test-setup.ts'],
+  },
+});

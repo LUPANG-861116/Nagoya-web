@@ -1,0 +1,87 @@
+[
+  {
+    "key": "todo:flight-out",
+    "text": "✈️ 【機票】星宇航空 JX838（9/21 14:55 台北桃園 T1 → 18:45 名古屋中部 NGO）已確認",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:flight-in",
+    "text": "✈️ 【機票】星宇航空 JX839（10/3 19:55 名古屋中部 NGO → 22:15 台北桃園 T1）已確認",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:enzanso",
+    "text": "🏔️ 【山屋】表銀座 燕山莊（9/24 住宿已預約確認，名物漢堡排晚餐）",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:yari",
+    "text": "🏔️ 【山屋】槍岳山莊（9/25 住宿預約確認，槍之岳 3180m 攻頂）",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:hotaka",
+    "text": "🏔️ 【山屋】穗高岳山莊（9/26 住宿預約確認，穿越大切戶後入住）",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:hirayu",
+    "text": "♨️ 【住宿】平湯溫泉旅館（9/27 入住確認，享受ひらゆの森露天溫泉）",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:bus-shirakawa",
+    "text": "🚌 【巴士】9/22 名古屋名鐵巴士中心 → 白川鄉合掌村 高速巴士座位預約（08:50班次）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:bus-matsumoto",
+    "text": "🚌 【巴士】9/22 高山濃飛巴士中心 → 松本巴士總站 特急巴士預約（16:50班次）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:gear-shop",
+    "text": "🎒 【裝備】9/23 松本石井運動購買高山瓦斯罐、行動糧、電解質粉與水袋整備",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:yamato",
+    "text": "📦 【行李】9/23 於松本飯店透過黑貓宅急便寄送非登山大行李至 9/28 名古屋飯店",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:helmet",
+    "text": "🪖 【安全】大切戶與穗高連峰岩場專用登山安全帽、防滑手套、頭燈電池確認",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:kurobe-tour",
+    "text": "🚌 【跟團】9/29 08:00 名古屋集合 KKday 653075 黑部立山 2天1夜行程憑證確認",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:ghibli",
+    "text": "🎟️ 【門票】10/1 吉卜力公園 (Ghibli Park) 大門票預約（Boo-Woo / 海外官網）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:esim",
+    "text": "📱 【網卡】購買 / 開通日本上網 eSIM 卡（確認手機支援並保存 QR Code）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:suica",
+    "text": "💳 【交通】手機錢包綁定 數位 Suica / ICOCA / PASMO 西瓜卡",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:vjw",
+    "text": "📝 【手續】出發前 3 天填寫 Visit Japan Web（入境審查與海關電子申報）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:insurance",
+    "text": "🛡️ 【保險】投保海外突發醫療 ＋ 登山海外緊急搜索救援險 ＋ 旅遊不便險",
+    "checkedInVault": false
+  }
+]
