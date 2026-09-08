@@ -50,6 +50,11 @@
     "checkedInVault": true
   },
   {
+    "key": "todo:bus-hirayu-nagoya",
+    "text": "🚌 【巴士】9/28 平湯溫泉 → 名古屋名鐵巴士中心（16:55~21:15 高速直達巴士，6,800円・已購買確認）",
+    "checkedInVault": true
+  },
+  {
     "key": "todo:gear-shop",
     "text": "🎒 【裝備】9/23 松本石井運動購買高山瓦斯罐、行動糧、電解質粉與水袋整備",
     "checkedInVault": false
