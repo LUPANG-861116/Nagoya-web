@@ -308,9 +308,9 @@ export default function Home() {
               <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/21</span>
               <span>名古屋站前飯店（寄放行李、逛地下街）</span>
             </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/22-23</span>
-              <span>松本站前飯店（Alpico Plaza Hotel，松本城下町）</span>
+            <div style={{ display: 'flex', gap: 8, background: 'rgba(59,109,79,0.08)', padding: '3px 6px', borderRadius: 4 }}>
+              <span style={{ fontWeight: 800, color: 'var(--c-pine)' }}>9/22-23</span>
+              <span><b>MATSUMOTO CASTLE hostel</b>【已確認・松本市中央2丁目1-12 2F】</span>
             </div>
             <div style={{ display: 'flex', gap: 8, background: 'rgba(201,150,62,0.1)', padding: '3px 6px', borderRadius: 4 }}>
               <span style={{ fontWeight: 800, color: 'var(--c-terracotta)' }}>9/24</span>

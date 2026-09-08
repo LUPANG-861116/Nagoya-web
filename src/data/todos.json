@@ -10,6 +10,11 @@
     "checkedInVault": true
   },
   {
+    "key": "todo:matsumoto-hostel",
+    "text": "🏨 【住宿】松本 MATSUMOTO CASTLE hostel（9/22-9/24 2晚住宿已確認，松本市中央2丁目1-12 2F）",
+    "checkedInVault": true
+  },
+  {
     "key": "todo:enzanso",
     "text": "🏔️ 【山屋】表銀座 燕山莊（9/24 住宿已預約確認，名物漢堡排晚餐）",
     "checkedInVault": true
@@ -46,7 +51,7 @@
   },
   {
     "key": "todo:yamato",
-    "text": "📦 【行李】9/23 於松本飯店透過黑貓宅急便寄送非登山大行李至 9/28 名古屋飯店",
+    "text": "📦 【行李】9/23 於青旅或松本周邊黑貓直營所／超商寄送非登山大行李至 9/28 名古屋飯店",
     "checkedInVault": false
   },
   {
