@@ -41,8 +41,8 @@
   },
   {
     "key": "todo:bus-matsumoto",
-    "text": "🚌 【巴士】9/22 高山濃飛巴士中心 → 松本巴士總站 特急巴士預約（16:50班次）",
-    "checkedInVault": false
+    "text": "🚌 【巴士】9/22 高山濃飛巴士中心 → 松本巴士總站（16:50~19:23 Alpico 26518號班次，已預訂確認）",
+    "checkedInVault": true
   },
   {
     "key": "todo:gear-shop",
