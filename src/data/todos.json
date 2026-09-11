@@ -36,8 +36,8 @@
   },
   {
     "key": "todo:bus-shirakawa",
-    "text": "🚌 【巴士】9/22 名古屋名鐵巴士中心 → 白川鄉合掌村（★已確定 07:50 最早班！全席指定席・4,200円，8/22 09:00 開放預約）",
-    "checkedInVault": false
+    "text": "🚌 【巴士】9/22 名古屋名鐵巴士中心 → 白川鄉合掌村（07:50~10:32 最早班！4,200円・★已購買確認）",
+    "checkedInVault": true
   },
   {
     "key": "todo:bus-takayama",
