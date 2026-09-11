@@ -41,8 +41,8 @@
   },
   {
     "key": "todo:bus-takayama",
-    "text": "🚌 【巴士】9/22 白川鄉 → 高山濃飛巴士中心（首選 14:45 班次為預約制，8/22 開放預訂；備案 15:15 免預約現場排隊）",
-    "checkedInVault": false
+    "text": "🚌 【巴士】9/22 白川鄉 → 高山濃飛巴士中心（14:45~15:35 北陸鐵道01車01D，預約番號09112039811，2,800円・已預訂確認）",
+    "checkedInVault": true
   },
   {
     "key": "todo:bus-matsumoto",
