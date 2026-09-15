@@ -60,8 +60,23 @@
     "checkedInVault": false
   },
   {
+    "key": "todo:nagoya-kaikatsu",
+    "text": "🏨 【住宿】9/21 名古屋 快活CLUB 網咖（預計包 8 小時夜間鍵付完全個室，名驛周邊近巴士中心）",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:nagoya-wasabi",
+    "text": "🏨 【住宿】9/28 名古屋站前 Hostel Wasabi（1晚 1,098元・已預訂確認，愛知縣名古屋市中村區椿町13-5）",
+    "checkedInVault": true
+  },
+  {
+    "key": "todo:koko-hotel",
+    "text": "🏨 【住宿】9/30-10/3 KOKO HOTEL 名古屋榮南（3晚 8,063元・已預訂確認，愛知縣名古屋市中區榮3-12-23-2）",
+    "checkedInVault": true
+  },
+  {
     "key": "todo:yamato",
-    "text": "📦 【行李】9/23 於青旅或松本周邊黑貓直營所／超商寄送非登山大行李至 9/28 名古屋飯店",
+    "text": "📦 【行李】9/23 松本黑貓宅急便寄送大行李箱至 9/28 Hostel Wasabi 名古屋站前（椿町13-5，已預訂確認）",
     "checkedInVault": false
   },
   {
