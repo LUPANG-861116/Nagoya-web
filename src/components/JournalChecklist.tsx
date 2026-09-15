@@ -7,30 +7,30 @@ export default function JournalChecklist() {
   const doneCount = todos.filter((t) => todosState[t.key] ?? t.checkedInVault).length;
 
   return (
-    <div className="journal-card" style={{ position: 'relative', background: 'var(--bg-note)', borderLeft: '4px solid var(--c-brass)', display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <WashiTape color="yellow" angle={1} width={80} top={-10} right={20} />
+    <div className="journal-card" style={{ position: 'relative', background: 'var(--bg-note)', borderLeft: '3px solid var(--c-brass)', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <WashiTape color="yellow" angle={1} width={70} top={-8} right={16} />
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 6 }}>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
-          <span className="serif" style={{ fontSize: 17, fontWeight: 800, color: 'var(--c-pine)' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+          <span className="serif" style={{ fontSize: 15.5, fontWeight: 800, color: 'var(--c-pine)' }}>
             🎒 裝備與行前備忘清單
           </span>
-          <span className="handwriting" style={{ fontSize: 18, color: 'var(--c-brass-dark)', fontWeight: 700 }}>
+          <span className="handwriting" style={{ fontSize: 16, color: 'var(--c-brass-dark)', fontWeight: 700 }}>
             Checklist
           </span>
         </div>
         <span style={{
           background: doneCount === todos.length ? 'var(--c-pine)' : 'rgba(201,150,62,0.18)',
           color: doneCount === todos.length ? '#ffffff' : 'var(--c-brass-dark)',
-          fontSize: 11.5,
+          fontSize: 10.5,
           fontWeight: 800,
-          padding: '2px 9px',
-          borderRadius: 12,
+          padding: '1.5px 7px',
+          borderRadius: 10,
         }}>
           已確認 {doneCount} / {todos.length}
         </span>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 440, overflowY: 'auto', paddingRight: 4 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 5, maxHeight: 440, overflowY: 'auto', paddingRight: 4 }}>
         {todos.map((t) => {
           const checked = todosState[t.key] ?? t.checkedInVault;
           return (
@@ -38,15 +38,15 @@ export default function JournalChecklist() {
               key={t.key}
               style={{
                 display: 'flex',
-                alignItems: 'flex-start',
-                gap: 10,
-                fontSize: 12.5,
-                lineHeight: 1.45,
+                alignItems: 'center',
+                gap: 8,
+                fontSize: 11.8,
+                lineHeight: 1.35,
                 cursor: 'pointer',
-                padding: '7px 9px',
-                borderRadius: 8,
-                background: checked ? 'rgba(20,50,40,0.02)' : 'rgba(255,255,255,0.6)',
-                border: checked ? '1px dashed rgba(20,50,40,0.12)' : '1px solid rgba(20,50,40,0.08)',
+                padding: '5px 8px',
+                borderRadius: 6,
+                background: checked ? 'rgba(20,50,40,0.015)' : 'rgba(255,255,255,0.5)',
+                border: checked ? '1px dashed rgba(20,50,40,0.1)' : '1px solid rgba(20,50,40,0.06)',
                 color: checked ? 'var(--c-muted)' : 'var(--c-ink)',
                 textDecoration: checked ? 'line-through' : 'none',
                 transition: 'all 0.15s ease',
@@ -57,7 +57,7 @@ export default function JournalChecklist() {
                 className="journal-checkbox"
                 checked={checked}
                 onChange={() => toggleTodo(t.key)}
-                style={{ marginTop: 2, flexShrink: 0 }}
+                style={{ flexShrink: 0 }}
               />
               <span style={{ flex: 1 }}>{t.text}</span>
             </label>

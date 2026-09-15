@@ -1,77 +1,77 @@
 [
   {
     "key": "todo:helmet",
-    "text": "🪖 【安全裝備】大切戶與穗高連峰岩場專用登山安全帽、防滑耐磨手套、頭燈備用電池",
+    "text": "🪖 登山安全帽 ＆ 防滑耐磨手套（大切戶岩場必備）",
     "checkedInVault": false
   },
   {
     "key": "todo:backpack-gear",
-    "text": "🎒 【登山核心】35~50L 輕量健行背包（附防水背包套）、登山杖 1~2 支、水袋/水壺 (2~3L)",
+    "text": "🎒 35~50L 輕量登山包（附雨罩）＆ 登山杖 ＆ 水袋",
     "checkedInVault": false
   },
   {
     "key": "todo:clothing",
-    "text": "🧥 【高山服飾】GORE-TEX 防水防風雨衣雨褲、保暖羊毛中層衣、排汗底層衣、羊毛厚襪 2~3 雙",
+    "text": "🧥 GORE-TEX 防水雨衣褲 ＆ 羊毛保暖中層 ＆ 排汗衣物",
     "checkedInVault": false
   },
   {
     "key": "todo:power-light",
-    "text": "💡 【照明電源】300 流明以上登山頭燈＋備用電池、大容量行動電源 (10000~20000mAh)",
+    "text": "💡 300流明登山頭燈（含備用電池）＆ 行動電源",
     "checkedInVault": false
   },
   {
     "key": "todo:offline-map",
-    "text": "🗺️ 【離線地圖】手機安裝 Yamap 或 ヤマレコ 並下載北阿爾卑斯全段離線 GPX 航跡",
+    "text": "🗺️ Yamap / ヤマレコ 下載北阿爾卑斯離線 GPX 航跡",
     "checkedInVault": true
   },
   {
     "key": "todo:medicine",
-    "text": "💊 【個人藥品】高山症預防用藥（丹木斯 Acetazolamide）、腸胃止痛藥、個人常備藥物",
+    "text": "💊 丹木斯 (高山症用藥) ＆ 腸胃止痛個人常備藥",
     "checkedInVault": false
   },
   {
     "key": "todo:gear-shop",
-    "text": "⛽ 【高山補給】9/23 松本石井運動 (Ishii Sports) 購買高山瓦斯罐、行動糧、能量膠與電解質粉",
+    "text": "⛽ 9/23 松本石井運動購買高山瓦斯罐 ＆ 行動糧補給",
     "checkedInVault": false
   },
   {
     "key": "todo:yamato",
-    "text": "📦 【行李託運】9/23 松本黑貓宅急便寄送大行李箱至 9/28 Hostel Wasabi 名古屋站前（椿町13-5）",
+    "text": "📦 9/23 松本黑貓寄大行李箱至 9/28 Hostel Wasabi",
     "checkedInVault": false
   },
   {
     "key": "todo:ghibli",
-    "text": "🎟️ 【門票預約】10/1 吉卜力公園 (Ghibli Park) 大門票預約（完全預約制，需提前搶票）",
+    "text": "🎟️ 10/1 吉卜力公園門票預約（完全預約制）",
     "checkedInVault": false
   },
   {
     "key": "todo:kurobe-tour",
-    "text": "🚌 【跟團憑證】9/29 07:45 名古屋站太閤通口 KKday 653075 黑部立山 2天1夜集合憑證確認",
+    "text": "🚌 9/29 07:45 KKday 653075 黑部立山太閤通口集合憑證",
     "checkedInVault": true
   },
   {
     "key": "todo:insurance",
-    "text": "🛡️ 【海外保險】投保海外突發醫療 ＋ 登山海外緊急搜索救援險 ＋ 旅遊不便險（3000m岩攀必備）",
+    "text": "🛡️ 海外突發醫療 ＋ 登山海外緊急搜索救援保險",
     "checkedInVault": false
   },
   {
     "key": "todo:esim",
-    "text": "📱 【上網網卡】購買 / 開通日本上網 eSIM 卡（確認手機支援並保存安裝 QR Code）",
+    "text": "📱 日本上網 eSIM 卡開通（儲存安裝 QR Code）",
     "checkedInVault": false
   },
   {
     "key": "todo:vjw",
-    "text": "📝 【入境手續】出發前 3 天填寫 Visit Japan Web（入境審查與海關申報電子 QR Code）",
+    "text": "📝 出發前 3 天填寫 Visit Japan Web (VJW 入境申報)",
     "checkedInVault": false
   },
   {
     "key": "todo:cash",
-    "text": "💴 【高山現金】準備 5~8 萬日圓現鈔（表銀座山屋消費、山區接駁巴士投現多不支援刷卡）",
+    "text": "💴 準備 5~8 萬日圓高山現金（山屋消費與接駁投現）",
     "checkedInVault": false
   },
   {
     "key": "todo:suica",
-    "text": "💳 【交通卡】手機錢包綁定 數位 Suica / ICOCA / PASMO 西瓜卡並完成加值",
+    "text": "💳 手機綁定 數位 Suica / ICOCA 西瓜卡並加值",
     "checkedInVault": true
   }
 ]
