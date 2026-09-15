@@ -1,117 +1,77 @@
 [
   {
-    "key": "todo:flight-out",
-    "text": "✈️ 【機票】星宇航空 JX838（9/21 14:55 台北桃園 T1 → 18:45 名古屋中部 NGO）已確認",
+    "key": "todo:helmet",
+    "text": "🪖 【安全裝備】大切戶與穗高連峰岩場專用登山安全帽、防滑耐磨手套、頭燈備用電池",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:backpack-gear",
+    "text": "🎒 【登山核心】35~50L 輕量健行背包（附防水背包套）、登山杖 1~2 支、水袋/水壺 (2~3L)",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:clothing",
+    "text": "🧥 【高山服飾】GORE-TEX 防水防風雨衣雨褲、保暖羊毛中層衣、排汗底層衣、羊毛厚襪 2~3 雙",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:power-light",
+    "text": "💡 【照明電源】300 流明以上登山頭燈＋備用電池、大容量行動電源 (10000~20000mAh)",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:offline-map",
+    "text": "🗺️ 【離線地圖】手機安裝 Yamap 或 ヤマレコ 並下載北阿爾卑斯全段離線 GPX 航跡",
     "checkedInVault": true
   },
   {
-    "key": "todo:flight-in",
-    "text": "✈️ 【機票】星宇航空 JX839（10/3 19:55 名古屋中部 NGO → 22:15 台北桃園 T1）已確認",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:matsumoto-hostel",
-    "text": "🏨 【住宿】松本 MATSUMOTO CASTLE hostel（9/22-9/24 2晚住宿已確認，松本市中央2丁目1-12 2F）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:enzanso",
-    "text": "🏔️ 【山屋】表銀座 燕山莊（9/24 住宿已預約確認，名物漢堡排晚餐）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:yari",
-    "text": "🏔️ 【山屋】槍岳山莊（9/25 住宿預約確認，槍之岳 3180m 攻頂）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:hotaka",
-    "text": "🏔️ 【山屋】穗高岳山莊（9/26 住宿預約確認，穿越大切戶後入住）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:hirayu",
-    "text": "🏨 【住宿】9/27 朴之木平 Joyful 朴之木（ジョイフルほおのき，岐阜県高山市丹生川町久手446-1，宿儺之湯露天風呂・已確認）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:bus-shirakawa",
-    "text": "🚌 【巴士】9/22 名古屋名鐵巴士中心 → 白川鄉合掌村（07:50~10:32 最早班！4,200円・★已購買確認）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:bus-takayama",
-    "text": "🚌 【巴士】9/22 白川鄉 → 高山濃飛巴士中心（14:45~15:35 北陸鐵道01車01D，預約番號09112039811，2,800円・已預訂確認）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:bus-matsumoto",
-    "text": "🚌 【巴士】9/22 高山濃飛巴士中心 → 松本巴士總站（16:50~19:23 Alpico 26518號班次，已預訂確認）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:bus-hirayu-nagoya",
-    "text": "🚌 【巴士】9/28 平湯溫泉 → 名古屋名鐵巴士中心（16:55~21:15 高速直達巴士，6,800円・已購買確認）",
-    "checkedInVault": true
+    "key": "todo:medicine",
+    "text": "💊 【個人藥品】高山症預防用藥（丹木斯 Acetazolamide）、腸胃止痛藥、個人常備藥物",
+    "checkedInVault": false
   },
   {
     "key": "todo:gear-shop",
-    "text": "🎒 【裝備】9/23 松本石井運動購買高山瓦斯罐、行動糧、電解質粉與水袋整備",
+    "text": "⛽ 【高山補給】9/23 松本石井運動 (Ishii Sports) 購買高山瓦斯罐、行動糧、能量膠與電解質粉",
     "checkedInVault": false
-  },
-  {
-    "key": "todo:nagoya-kaikatsu",
-    "text": "🏨 【住宿】9/21 名古屋 快活CLUB 網咖（預計包 8 小時夜間鍵付完全個室，名驛周邊近巴士中心）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:nagoya-wasabi",
-    "text": "🏨 【住宿】9/28 名古屋站前 Hostel Wasabi（1晚 1,098元・已預訂確認，愛知縣名古屋市中村區椿町13-5）",
-    "checkedInVault": true
-  },
-  {
-    "key": "todo:koko-hotel",
-    "text": "🏨 【住宿】9/30-10/3 KOKO HOTEL 名古屋榮南（3晚 8,063元・已預訂確認，愛知縣名古屋市中區榮3-12-23-2）",
-    "checkedInVault": true
   },
   {
     "key": "todo:yamato",
-    "text": "📦 【行李】9/23 松本黑貓宅急便寄送大行李箱至 9/28 Hostel Wasabi 名古屋站前（椿町13-5，已預訂確認）",
+    "text": "📦 【行李託運】9/23 松本黑貓宅急便寄送大行李箱至 9/28 Hostel Wasabi 名古屋站前（椿町13-5）",
     "checkedInVault": false
   },
   {
-    "key": "todo:helmet",
-    "text": "🪖 【安全】大切戶與穗高連峰岩場專用登山安全帽、防滑手套、頭燈電池確認",
+    "key": "todo:ghibli",
+    "text": "🎟️ 【門票預約】10/1 吉卜力公園 (Ghibli Park) 大門票預約（完全預約制，需提前搶票）",
     "checkedInVault": false
   },
   {
     "key": "todo:kurobe-tour",
-    "text": "🚌 【跟團】9/29 08:00 名古屋集合 KKday 653075 黑部立山 2天1夜行程憑證確認",
+    "text": "🚌 【跟團憑證】9/29 07:45 名古屋站太閤通口 KKday 653075 黑部立山 2天1夜集合憑證確認",
     "checkedInVault": true
   },
   {
-    "key": "todo:ghibli",
-    "text": "🎟️ 【門票】10/1 吉卜力公園 (Ghibli Park) 大門票預約（Boo-Woo / 海外官網）",
+    "key": "todo:insurance",
+    "text": "🛡️ 【海外保險】投保海外突發醫療 ＋ 登山海外緊急搜索救援險 ＋ 旅遊不便險（3000m岩攀必備）",
     "checkedInVault": false
   },
   {
     "key": "todo:esim",
-    "text": "📱 【網卡】購買 / 開通日本上網 eSIM 卡（確認手機支援並保存 QR Code）",
+    "text": "📱 【上網網卡】購買 / 開通日本上網 eSIM 卡（確認手機支援並保存安裝 QR Code）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:vjw",
+    "text": "📝 【入境手續】出發前 3 天填寫 Visit Japan Web（入境審查與海關申報電子 QR Code）",
+    "checkedInVault": false
+  },
+  {
+    "key": "todo:cash",
+    "text": "💴 【高山現金】準備 5~8 萬日圓現鈔（表銀座山屋消費、山區接駁巴士投現多不支援刷卡）",
     "checkedInVault": false
   },
   {
     "key": "todo:suica",
-    "text": "💳 【交通】手機錢包綁定 數位 Suica / ICOCA / PASMO 西瓜卡",
+    "text": "💳 【交通卡】手機錢包綁定 數位 Suica / ICOCA / PASMO 西瓜卡並完成加值",
     "checkedInVault": true
-  },
-  {
-    "key": "todo:vjw",
-    "text": "📝 【手續】出發前 3 天填寫 Visit Japan Web（入境審查與海關電子申報）",
-    "checkedInVault": false
-  },
-  {
-    "key": "todo:insurance",
-    "text": "🛡️ 【保險】投保海外突發醫療 ＋ 登山海外緊急搜索救援險 ＋ 旅遊不便險",
-    "checkedInVault": false
   }
 ]

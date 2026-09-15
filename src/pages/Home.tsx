@@ -26,6 +26,104 @@ const DAY_QUICK_HIGHLIGHTS: { short: string; tags: string[]; isHighlight?: boole
   { short: '名驛最後採買 ➔ 星宇 JX839 返台', tags: ['高島屋', '波音787館', '凱旋歸國'] },
 ];
 
+const ACCOMMODATION_SCHEDULE: {
+  dates: string;
+  area: string;
+  name: string;
+  badge: string;
+  badgeType: 'confirmed' | 'booked' | 'tour' | 'plan';
+  sub: string;
+  highlight: string;
+  isSpecial?: boolean;
+}[] = [
+  {
+    dates: '9/21 (D1)',
+    area: '名驛',
+    name: '快活CLUB 名古屋站前',
+    badge: '包8小時',
+    badgeType: 'plan',
+    sub: '高級漫畫網咖・鍵付完全個室',
+    highlight: '可平躺補眠、飲料冰淇淋免費、附淋浴間；步行 5~8 分至名鐵巴士中心，隔早搭 07:50 首班車超從容！',
+  },
+  {
+    dates: '9/22-23 (D2-D3)',
+    area: '信州松本',
+    name: 'MATSUMOTO CASTLE hostel',
+    badge: '已確認・2晚',
+    badgeType: 'confirmed',
+    sub: '松本城堡青年旅館（中央2丁目1-12 2F）',
+    highlight: '距松本站 8 分、松本城 8 分；9/23 整理大行李以黑貓宅急便直寄 9/28 Hostel Wasabi！',
+  },
+  {
+    dates: '9/24 (D4)',
+    area: '表銀座',
+    name: '燕山莊 (H2712m)',
+    badge: '已預約確認',
+    badgeType: 'confirmed',
+    sub: '北阿爾卑斯女王山屋',
+    highlight: '全日最美山屋！名物起司漢堡排晚餐、赤沼莊主法螺貝吹奏、夕陽雲海',
+    isSpecial: true,
+  },
+  {
+    dates: '9/25 (D5)',
+    area: '槍岳頂峰',
+    name: '槍岳山莊 (H3080m)',
+    badge: '已預約確認',
+    badgeType: 'confirmed',
+    sub: '天槍尖峰雲上山莊',
+    highlight: '緊鄰 3180m 槍之岳岩峰頂，仰望 3000m 無光害震撼銀河與日出雲海',
+    isSpecial: true,
+  },
+  {
+    dates: '9/26 (D6)',
+    area: '穗高連峰',
+    name: '穗高岳山莊 (H2996m)',
+    badge: '已預約確認',
+    badgeType: 'confirmed',
+    sub: '白出乘越風口鞍部',
+    highlight: '極限穿越「大切戶」斷崖刃脊後的安心避難所，俯瞰涸澤圈谷秋色',
+    isSpecial: true,
+  },
+  {
+    dates: '9/27 (D7)',
+    area: '乘鞍山麓',
+    name: 'Joyful 朴之木 (ジョイフルほおのき)',
+    badge: '已確認入住',
+    badgeType: 'confirmed',
+    sub: '滑雪溫泉渡假飯店（高山市丹生川町）',
+    highlight: '天然溫泉「飛驒丹生川 宿儺之湯」露天風呂；門口即乘鞍天際線穿梭巴士總站，清晨 07:55 攻頂免趕車！',
+  },
+  {
+    dates: '9/28 (D8)',
+    area: '名驛西口',
+    name: 'Hostel Wasabi 名古屋站前',
+    badge: '已確認・1,098元',
+    badgeType: 'booked',
+    sub: '站前青年旅館（中村區椿町13-5）',
+    highlight: '9/23 松本黑貓宅急便直寄目的地！櫃檯簽收行李；隔日步行 3~5 分鐘即達 07:45 黑部立山太閤通口集合點！',
+    isSpecial: true,
+  },
+  {
+    dates: '9/29 (D9)',
+    area: '立山室堂',
+    name: '室堂高原溫泉飯店／山莊',
+    badge: 'KKday 全包',
+    badgeType: 'tour',
+    sub: '高原地熱溫泉旅宿 (H2450m)',
+    highlight: 'KKday 653075 包含 1 晚住宿、會席晚餐與早餐；享受全日本最高地熱溫泉',
+  },
+  {
+    dates: '9/30-10/2 (D10-D12)',
+    area: '榮商圈',
+    name: 'KOKO HOTEL 名古屋榮南',
+    badge: '已確認・3晚 8,063元',
+    badgeType: 'booked',
+    sub: '榮商圈核心商務飯店（中區榮3-12-23-2）',
+    highlight: '連住 3 晚免搬家！近矢場町站 5 分、榮站 8 分；大須/PARCO/松坂屋購物美食天堂；10/1 榮站直搭地鐵至藤之丘轉 Linimo 直達吉卜力公園',
+    isSpecial: true,
+  },
+];
+
 const HERO_IMG = `${import.meta.env.BASE_URL}journal-hero-zh.png`;
 const DIORAMA_IMG = `${import.meta.env.BASE_URL}nagoya-diorama.jpg`;
 
@@ -255,23 +353,28 @@ export default function Home() {
       </div>
 
       {/* 4. 交通與航班・山屋住宿卡 (無 Google Maps 連結，純淨排版) */}
+      {/* 4. 交通與航班・山屋住宿卡 (無 Google Maps 連結，純淨排版) */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
-        {/* 機票卡 */}
-        <div className="journal-card" style={{ position: 'relative' }}>
+        {/* 機票與長途跨縣巴士卡 */}
+        <div className="journal-card" style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: 12 }}>
           <WashiTape color="coral" angle={-1} width={80} top={-10} left={20} />
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
-            <span className="serif" style={{ fontSize: 16, fontWeight: 800, color: 'var(--c-pine)' }}>
-              ✈️ 星宇航空來回航班憑證
-            </span>
-            <span style={{ fontSize: 11, background: 'rgba(20,50,40,0.08)', padding: '2px 8px', borderRadius: 4, fontWeight: 700 }}>
-              STARLUX
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: 18 }}>✈️</span>
+              <span className="serif" style={{ fontSize: 16, fontWeight: 800, color: 'var(--c-pine)' }}>
+                星宇航空 ＆ 跨縣穿山巴士
+              </span>
+            </div>
+            <span style={{ fontSize: 11, background: 'rgba(20,50,40,0.08)', padding: '2px 8px', borderRadius: 12, fontWeight: 700 }}>
+              對號座確認
             </span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 13 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 440, overflowY: 'auto', paddingRight: 4 }}>
+            {/* 去程機票 */}
             <div style={{ background: '#fdfbf7', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(20,50,40,0.08)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, color: 'var(--c-pine)' }}>
-                <span>去程 JX838</span>
+                <span>去程 星宇 JX838</span>
                 <span className="time-pill">09/21 (週一) 14:55</span>
               </div>
               <div style={{ fontSize: 12, color: 'var(--c-muted)', marginTop: 4 }}>
@@ -279,59 +382,148 @@ export default function Home() {
               </div>
             </div>
 
+            {/* 回程機票 */}
             <div style={{ background: '#fdfbf7', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(20,50,40,0.08)' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 700, color: 'var(--c-pine)' }}>
-                <span>回程 JX839</span>
+                <span>回程 星宇 JX839</span>
                 <span className="time-pill">10/03 (週六) 19:55</span>
               </div>
               <div style={{ fontSize: 12, color: 'var(--c-muted)', marginTop: 4 }}>
                 名古屋中部 NGO ➔ 台北桃園 T1 (22:15 到)・航程約 3h20m
               </div>
             </div>
+
+            {/* 9/22 穿山大遷徙巴士三大段落 */}
+            <div style={{ background: 'rgba(201,150,62,0.07)', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(201,150,62,0.3)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--c-ink)' }}>
+                  🚌 9/22 跨縣三大穿山長途巴士
+                </span>
+                <span style={{ fontSize: 10.5, fontWeight: 800, background: 'var(--c-pine)', color: '#fff', padding: '1.5px 6px', borderRadius: 10 }}>
+                  100% 訂妥
+                </span>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 11.5, color: 'var(--c-ink-light)' }}>
+                <div>• <b>07:50~10:32</b> 名古屋 ➔ 白川鄉（4,200円・首班車★已購買）</div>
+                <div>• <b>14:45~15:35</b> 白川鄉 ➔ 高山（北陸鐵道 01車01D・2,800円★已預訂）</div>
+                <div>• <b>16:50~19:23</b> 高山 ➔ 松本（Alpico 26518號特急★已預訂）</div>
+              </div>
+            </div>
+
+            {/* 9/28 平湯直達名古屋巴士 */}
+            <div style={{ background: 'rgba(20,50,40,0.03)', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(20,50,40,0.08)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+                <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--c-pine)' }}>
+                  🚌 9/28 平湯直達名古屋高速巴士
+                </span>
+                <span style={{ fontSize: 10.5, fontWeight: 700, background: 'rgba(59,109,79,0.12)', color: 'var(--c-pine)', padding: '1.5px 6px', borderRadius: 10 }}>
+                  已購買確認
+                </span>
+              </div>
+              <div style={{ fontSize: 11.5, color: 'var(--c-ink-light)' }}>
+                • <b>16:55~21:15</b> 平湯溫泉總站 ➔ 名鐵巴士中心（6,800円・一車直達免轉乘）
+              </div>
+            </div>
+
+            {/* 9/29-30 黑部立山 2天1夜專車 */}
+            <div style={{ background: 'rgba(20,50,40,0.03)', padding: '10px 14px', borderRadius: 8, border: '1px solid rgba(20,50,40,0.08)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
+                <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--c-pine)' }}>
+                  🏔️ 9/29~30 黑部立山 2天1夜套票
+                </span>
+                <span style={{ fontSize: 10.5, fontWeight: 700, background: 'rgba(201,150,62,0.18)', color: 'var(--c-brass-dark)', padding: '1.5px 6px', borderRadius: 10 }}>
+                  KKday 全包
+                </span>
+              </div>
+              <div style={{ fontSize: 11.5, color: 'var(--c-ink-light)' }}>
+                • 訂單 653075：名古屋專屬遊覽車 ＋ 立山 6 種登山交通 ＋ 室堂飯店
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* 住宿動線安排 */}
-        <div className="journal-card" style={{ position: 'relative' }}>
+        {/* 住宿動線安排 (完整可捲動 12 晚排程) */}
+        <div className="journal-card" style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: 12 }}>
           <WashiTape color="green" angle={1.5} width={80} top={-10} right={20} />
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 10 }}>
-            <span className="serif" style={{ fontSize: 16, fontWeight: 800, color: 'var(--c-pine)' }}>
-              🏨 住宿與山屋入住排程
-            </span>
-            <span style={{ fontSize: 11, background: 'rgba(201,150,62,0.15)', color: 'var(--c-brass-dark)', padding: '2px 8px', borderRadius: 4, fontWeight: 700 }}>
-              依序入住
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: 18 }}>🏨</span>
+              <span className="serif" style={{ fontSize: 16, fontWeight: 800, color: 'var(--c-pine)' }}>
+                住宿與山屋入住排程
+              </span>
+              <span className="handwriting" style={{ fontSize: 17, color: 'var(--c-brass-dark)', fontWeight: 700 }}>
+                12 Nights
+              </span>
+            </div>
+            <span style={{ fontSize: 11, background: 'rgba(59,109,79,0.12)', color: 'var(--c-pine)', padding: '2px 8px', borderRadius: 12, fontWeight: 800 }}>
+              100% 全數底定
             </span>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 12.5 }}>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/21</span>
-              <span>名古屋站前飯店（寄放行李、逛地下街）</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8, background: 'rgba(59,109,79,0.08)', padding: '3px 6px', borderRadius: 4 }}>
-              <span style={{ fontWeight: 800, color: 'var(--c-pine)' }}>9/22-23</span>
-              <span><b>MATSUMOTO CASTLE hostel</b>【已確認・松本市中央2丁目1-12 2F】</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8, background: 'rgba(201,150,62,0.1)', padding: '3px 6px', borderRadius: 4 }}>
-              <span style={{ fontWeight: 800, color: 'var(--c-terracotta)' }}>9/24</span>
-              <span><b>燕山莊 (H2712m)</b>【已預約確認・名物漢堡排】</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/25</span>
-              <span><b>槍岳山莊 (H3080m)</b>【天槍絕頂星空】</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/26</span>
-              <span><b>穗高岳山莊 (H2996m)</b>【白出乘越鞍部】</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/27</span>
-              <span>平湯溫泉旅館（ひらゆの森 露天溫泉犒賞）</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <span style={{ fontWeight: 700, color: 'var(--c-pine)' }}>9/28-10/2</span>
-              <span>名古屋市區飯店（領回黑貓行李、黑部立山與吉卜力）</span>
-            </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, maxHeight: 440, overflowY: 'auto', paddingRight: 4 }}>
+            {ACCOMMODATION_SCHEDULE.map((acc, idx) => (
+              <div
+                key={idx}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 4,
+                  padding: '9px 12px',
+                  borderRadius: 10,
+                  background: acc.isSpecial ? 'rgba(201,150,62,0.07)' : 'rgba(20,50,40,0.03)',
+                  border: acc.isSpecial ? '1px solid rgba(201,150,62,0.3)' : '1px solid rgba(20,50,40,0.07)',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{
+                      background: acc.isSpecial ? 'var(--c-terracotta)' : 'var(--c-pine)',
+                      color: '#ffffff',
+                      fontSize: 10.5,
+                      fontWeight: 800,
+                      padding: '2px 7px',
+                      borderRadius: 10,
+                      whiteSpace: 'nowrap',
+                    }}>
+                      {acc.dates}
+                    </span>
+                    <span style={{
+                      fontSize: 11,
+                      color: 'var(--c-muted)',
+                      background: 'rgba(20,50,40,0.06)',
+                      padding: '1px 6px',
+                      borderRadius: 4,
+                    }}>
+                      {acc.area}
+                    </span>
+                  </div>
+                  <span style={{
+                    fontSize: 10.5,
+                    fontWeight: 700,
+                    padding: '1.5px 7px',
+                    borderRadius: 6,
+                    background: acc.badgeType === 'booked' ? 'rgba(194,84,59,0.12)' : acc.badgeType === 'tour' ? 'rgba(59,109,79,0.12)' : 'rgba(201,150,62,0.15)',
+                    color: acc.badgeType === 'booked' ? 'var(--c-terracotta)' : acc.badgeType === 'tour' ? 'var(--c-pine)' : 'var(--c-brass-dark)',
+                    whiteSpace: 'nowrap',
+                  }}>
+                    {acc.badge}
+                  </span>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginTop: 2 }}>
+                  <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--c-ink)' }}>
+                    {acc.name}
+                  </span>
+                  <span style={{ fontSize: 11, color: 'var(--c-muted)' }}>
+                    {acc.sub}
+                  </span>
+                </div>
+
+                <div style={{ fontSize: 11.5, color: 'var(--c-ink-light)', lineHeight: 1.4, marginTop: 1 }}>
+                  💡 {acc.highlight}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
