@@ -6,6 +6,7 @@ import AreaRail from '../components/AreaRail';
 import Reveal from '../components/Reveal';
 import EntityPicker from '../components/EntityPicker';
 import JourneyRouteMap from '../components/JourneyRouteMap';
+import AlpsOfflineMap from '../components/AlpsOfflineMap';
 
 type View = 'timeline' | 'cards' | 'map';
 const VIEWS: [View, string][] = [['timeline', '時間軸'], ['cards', '卡片'], ['map', '手繪路徑圖']];
@@ -124,6 +125,49 @@ export default function DailyPlan() {
             </div>
           </div>
 
+          {/* 表銀座 4 天縱走專屬離線 GPS 登山地圖捷徑 */}
+          {dayIdx >= 3 && dayIdx <= 6 && (
+            <div style={{
+              marginTop: 10,
+              marginBottom: 4,
+              padding: '10px 14px',
+              borderRadius: 10,
+              background: 'linear-gradient(135deg, rgba(20,50,40,0.06), rgba(201,150,62,0.12))',
+              border: '1px solid rgba(20,50,40,0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: 8,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
+                <span style={{ fontSize: 16 }}>🏔️</span>
+                <span style={{ fontWeight: 800, color: 'var(--c-pine)' }}>北阿爾卑斯高山縱走專用：</span>
+                <span style={{ color: 'var(--c-ink-light)' }}>支援深山無訊號硬體 GPS 定位 ＆ GPX 下載</span>
+              </div>
+              <button
+                className="btn-plain"
+                onClick={() => { window.location.hash = 'map/alps'; }}
+                style={{
+                  background: 'var(--c-pine)',
+                  color: '#ffffff',
+                  fontSize: 11.5,
+                  fontWeight: 700,
+                  padding: '5px 12px',
+                  borderRadius: 6,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 5,
+                  boxShadow: '0 2px 6px rgba(20,50,40,0.2)',
+                }}
+              >
+                <span>📍</span>
+                <span>開啟表銀座離線 GPS 登山地圖 ↗</span>
+              </button>
+            </div>
+          )}
+
           {msg && (
             <div style={{ marginTop: 12, fontSize: 12.5, color: 'var(--brown-dk)' }}>{msg}</div>
           )}
@@ -227,14 +271,20 @@ export default function DailyPlan() {
 
       {view === 'map' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <JourneyRouteMap activeDay={dayIdx + 1} onSelectDay={(d) => handleSelectDay(d - 1)} />
-          <div className="card plan-card" style={{ background: '#ffffff', borderRadius: 14, border: '1px solid var(--c-line)' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, marginBottom: 12 }}>
-              <span className="serif" style={{ fontSize: 20, fontWeight: 800, color: 'var(--c-pine)' }}>{day.label}</span>
-              <span style={{ fontSize: 13, color: 'var(--c-muted)', fontWeight: 600 }}>{day.theme}・當日活動區域</span>
-            </div>
-            <AreaRail highlightAreas={day.areas || []} showCounts={false} />
-          </div>
+          {dayIdx >= 3 && dayIdx <= 6 ? (
+            <AlpsOfflineMap />
+          ) : (
+            <>
+              <JourneyRouteMap activeDay={dayIdx + 1} onSelectDay={(d) => handleSelectDay(d - 1)} />
+              <div className="card plan-card" style={{ background: '#ffffff', borderRadius: 14, border: '1px solid var(--c-line)' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: 8, marginBottom: 12 }}>
+                  <span className="serif" style={{ fontSize: 20, fontWeight: 800, color: 'var(--c-pine)' }}>{day.label}</span>
+                  <span style={{ fontSize: 13, color: 'var(--c-muted)', fontWeight: 600 }}>{day.theme}・當日活動區域</span>
+                </div>
+                <AreaRail highlightAreas={day.areas || []} showCounts={false} />
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>
