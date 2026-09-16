@@ -81,20 +81,31 @@ export default function AlpsOfflineMap() {
     if (!mapContainerRef.current) return;
     if (mapInstanceRef.current) return; // already initialized
 
-    // Center around Yarigatake / Enzanso (approx 36.34, 137.68)
+    // 嚴格限制地圖範圍：僅鎖定「北阿爾卑斯表銀座縱走」走廊（西南: 上高地 ➔ 東北: 中房溫泉/燕岳）
+    // 絕不載入全日本其他區域，嚴格節省手機儲存空間與記憶體
+    const alpsBounds = L.latLngBounds([
+      [36.20, 137.58], // 西南角 (上高地 / 穗高岳)
+      [36.45, 137.80], // 東北角 (中房溫泉 / 燕岳)
+    ]);
+
     const map = L.map(mapContainerRef.current, {
-      center: [36.35, 137.69],
+      center: [36.34, 137.68],
       zoom: 12,
+      minZoom: 11,
+      maxZoom: 16,
+      maxBounds: alpsBounds,
+      maxBoundsViscosity: 1.0, // 邊界硬性鎖定，禁止滑出表銀座山區
       zoomControl: true,
     });
 
     mapInstanceRef.current = map;
 
-    // Add Initial Tile Layer (GSI standard topo)
+    // Add Initial Tile Layer (GSI standard topo) - strictly bounded
     const currentLayerConfig = TILE_LAYERS[0];
     const tileLayer = L.tileLayer(currentLayerConfig.url, {
       maxZoom: currentLayerConfig.maxZoom,
       attribution: currentLayerConfig.attr,
+      bounds: alpsBounds, // 僅請求表銀座範圍圖磚
     }).addTo(map);
     tileLayerRef.current = tileLayer;
 
@@ -139,10 +150,15 @@ export default function AlpsOfflineMap() {
       map.removeLayer(tileLayerRef.current);
     }
 
+    const alpsBounds = L.latLngBounds([
+      [36.20, 137.58],
+      [36.45, 137.80],
+    ]);
     const cfg = TILE_LAYERS.find((l) => l.id === activeLayer) || TILE_LAYERS[0];
     const newLayer = L.tileLayer(cfg.url, {
       maxZoom: cfg.maxZoom,
       attribution: cfg.attr,
+      bounds: alpsBounds,
     }).addTo(map);
     tileLayerRef.current = newLayer;
   }, [activeLayer]);
@@ -369,9 +385,12 @@ export default function AlpsOfflineMap() {
               <span style={{ fontSize: 10.5, background: 'rgba(59,109,79,0.12)', color: 'var(--c-pine)', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>
                 國土地理院 1:25,000 等高線
               </span>
+              <span style={{ fontSize: 10.5, background: 'rgba(201,150,62,0.15)', color: 'var(--c-brass-dark)', padding: '2px 8px', borderRadius: 10, fontWeight: 700 }}>
+                僅限表銀座 38km 走廊・整份手帳僅 0.8 MB
+              </span>
             </div>
             <div style={{ fontSize: 11.5, color: 'var(--c-muted)', marginTop: 3 }}>
-              全長 38.3 km・中房溫泉 ➔ 燕岳 ➔ 大天井 ➔ 西岳 ➔ 槍之岳 ➔ 大切戶 ➔ 穗高岳 ➔ 上高地
+              🎯 僅鎖定北阿爾卑斯表銀座縱走精華區（中房溫泉 ➔ 燕岳 ➔ 槍之岳 ➔ 穗高岳 ➔ 上高地），絕無預載全日本圖資，完全不佔手機空間！
             </div>
           </div>
 
